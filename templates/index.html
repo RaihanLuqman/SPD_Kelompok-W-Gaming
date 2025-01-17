@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Penyakit</title>
+    <style>
+        /* Resetting some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background color for the page */
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container for form elements */
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Title styling */
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* Paragraph under the title */
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Style for the file input */
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Custom button for file upload */
+        .file-upload-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .file-upload-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* File input button label */
+        .file-upload-label {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #2196F3;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .file-upload-label:hover {
+            background-color: #1976D2;
+        }
+
+        /* Style for the submit button */
+        button {
+            background-color: #008CBA;
+            color: white;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0077B5;
+        }
+
+        /* Styling for the file name display */
+        .file-name {
+            margin-top: 10px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Deteksi Penyakit Umum di Indonesia</h1>
+        <p>Upload file data pasien untuk analisis:</p>
+        <form method="post" enctype="multipart/form-data">
+            <!-- Custom file upload button -->
+            <div class="file-name" id="file-name"></div>
+            <label for="pasien_file" class="file-upload-label">Pilih File CSV</label>
+            <input type="file" id="pasien_file" name="pasien_file" accept=".csv" required onchange="displayFileName()"><br><br>
+            <button type="submit">Proses</button>
+        </form>
+    </div>
+
+    <script>
+        function displayFileName() {
+            var fileInput = document.getElementById('pasien_file');
+            var fileName = fileInput.files[0] ? fileInput.files[0].name : "No file selected";
+            document.getElementById('file-name').textContent = "File yang dipilih: " + fileName;
+        }
+    </script>
+</body>
+</html>

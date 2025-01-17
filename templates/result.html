@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Diagnosa Penyakit</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background and font */
+        body {
+            background-color: #f4f7fc;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 0.75rem; /* Drastically reduced base font size */
+        }
+
+        /* Header styling */
+        h1 {
+            font-size: 1.8rem; /* Reduced font size */
+            color: #4CAF50;
+            margin-bottom: 12px;
+        }
+
+        /* Sub-header styling */
+        h2 {
+            font-size: 1.5rem; /* Reduced font size */
+            color: #333;
+            margin-top: 15px;
+            margin-bottom: 6px;
+        }
+
+        h3 {
+            font-size: 1.1rem; /* Reduced font size */
+            color: #333;
+            margin-top: 8px;
+        }
+
+        h4 {
+            font-size: 0.9rem; /* Reduced font size */
+            color: #555;
+            margin-top: 6px;
+        }
+
+        /* Styling for result list */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 12px;
+            max-height: 200px; /* Set a max height to control size */
+            overflow-y: auto; /* Allow scrolling if needed */
+        }
+
+        li {
+            font-size: 0.9rem; /* Reduced font size */
+            background-color: #ffffff;
+            padding: 6px 10px; /* Reduced padding */
+            margin: 6px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Styling for result card */
+        .card {
+            background-color: #ffffff;
+            padding: 12px; /* Reduced padding */
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+            margin-top: 12px;
+            text-align: center;
+            width: 90%;
+            max-width: 450px; /* Reduced max width */
+        }
+
+        .card h3 {
+            font-size: 1.1rem; /* Reduced font size */
+            color: #333;
+        }
+
+        /* Link styling for return button */
+        a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #4CAF50;
+            padding: 8px 16px; /* Reduced padding */
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 0.9rem; /* Reduced font size */
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Hasil Diagnosa Penyakit</h1>
+
+    <div class="card">
+        <h2>Statistik Penyakit:</h2>
+        <ul>
+            {% for penyakit, count in statistik.items() %}
+                <li><span>{{ penyakit }}</span><span>{{ count }} orang</span></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <h3>Penyakit Paling Umum: {{ most_common }}</h3>
+    
+    <h4>Total Dataset: {{ total_dataset }} data</h4>
+    <h4>Waktu Selesai Proses: {{ elapsed_time }}</h4>
+
+    <a href="/">Kembali</a>
+</body>
+</html>

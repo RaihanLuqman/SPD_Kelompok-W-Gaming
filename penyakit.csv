@@ -1,0 +1,11 @@
+penyakit,demam,sakit_kepala,batuk,sesak_napas,mual,lemas,sakit_perut,berdarah,ruam_kulit,pilek
+Flu,1,1,1,0,0,1,0,0,0,1
+Diare,0,0,0,0,1,1,1,0,0,0
+Demam Berdarah,1,1,0,0,0,1,0,1,1,0
+Covid-19,1,1,1,1,0,1,0,0,0,1
+Tipes,1,0,0,0,1,1,1,0,0,0
+Maag,0,0,0,0,1,0,1,0,0,0
+Radang Tenggorokan,0,1,1,0,0,0,0,0,0,1
+Asma,0,0,0,1,0,0,0,0,0,0
+Malaria,1,1,0,0,0,1,0,1,0,0
+Campak,1,0,0,0,0,0,0,1,1,0
